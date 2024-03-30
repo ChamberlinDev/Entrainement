@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main # uniquement la branche main
+
 jobs: 
   deployement: # nom du jobs
     runs-on: ubuntu-latest # instance temporaire
@@ -28,6 +29,7 @@ jobs:
           echo "Bucket does not exist. Stopping the pipeline."
           exit 1
         fi
+        
       env:
         AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
 
